@@ -17,7 +17,10 @@ class RoomFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => \App\Models\User::factory(),
+            'name' => fake()->randomElement(['Living Room', 'Kitchen', 'Bedroom', 'Bathroom', 'Garage', 'Basement', 'Attic', 'Office']),
+            'location' => fake()->optional()->randomElement(['First Floor', 'Second Floor', 'Basement', 'Ground Level']),
+            'description' => fake()->optional()->sentence(),
         ];
     }
 }
